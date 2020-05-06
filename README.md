@@ -4,6 +4,6 @@ Este projeto é para criação de um pacote baseado no abntex2, segundo o [MANUA
 
 ## Requisitos
 
-É preciso ter usar a classe abntex2
+É preciso usar a classe abntex2
 
 
