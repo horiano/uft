@@ -38,59 +38,48 @@
 	\end{capa}
 }
 
-
-%CUSTOMIZACAO DA FOLHA DE ROSTO
-
-\makeatletter
-
-\renewcommand{\folhaderostocontent}{
-\begin{center}
-			{\ABNTEXchapterfont\textbf{\MakeUppercase{\NomeAutor}}}\\
-			
-			\vspace*{5.5cm}
-			\ABNTEXchapterfont\textbf{\MakeUppercase{\imprimirtitulo}}\\
-			
-\end{center}
-
-	 \vspace*{4.5cm}
-
-\abntex@ifnotempty{\imprimirpreambulo}{%
-  \hspace{.4\textwidth}
-  \begin{minipage}{.5\textwidth}
-  	\begin{SingleSpace}
-	  {\footnotesize \imprimirpreambulo}
-	\end{SingleSpace}
-  \end{minipage}%
-}%
-
-\vspace*{5mm}
-
-	\hspace{.4\textwidth}
-	\begin{minipage}{.5\textwidth}
-      \begin{SingleSpace}
-			\noindent
-		{\footnotesize\imprimirorientadorRotulo~\imprimirorientador\par}
-		\noindent
-		\abntex@ifnotempty{\imprimircoorientador}{%
-			{\footnotesize\imprimircoorientadorRotulo~\imprimircoorientador}%
-		}%
-      \end{SingleSpace}
-	\end{minipage}%
-
-    \vfill
-
-\noindent
-
-
-\begin{center}
-\MakeUppercase{\imprimirlocal}\\ \imprimirdata
-%\vspace*{1cm}
-\end{center}
+% CAPA PARA RELATORIO DE ESTAGIO
+\newcommand{\imprimircaparelatorio}{
+	\begin{capa}%
+	\begin{center}
+		\includegraphics[width=2.83cm,height=3.1cm]{logouft}\\
+		%Universidade
+		\ABNTEXchapterfont UNIVERSIDADE FEDERAL DO TOCANTINS\\
+		C\^{A}MPUS UNIVERSIT\'{A}RIO DE \Campus \\
+		\Curso \\
+		\vspace*{6.5cm}
+		\ABNTEXchapterfont\textbf{\MakeUppercase{\imprimirtitulo}}\\
+		
+	\end{center}
+	
+	\vspace*{2.5cm}
+	
+	\abntex@ifnotempty{\imprimirpreambulo}{%
+		\hspace{.4\textwidth}
+		\begin{minipage}{.5\textwidth}
+			\begin{SingleSpace}
+				{\footnotesize \imprimirpreambulo}
+			\end{SingleSpace}
+		\end{minipage}%
+	}%
+	
+	
+	
+	\vfill
+	
+	\noindent
+	
+	
+	\begin{center}
+		\MakeUppercase{\imprimirlocal}\\ \imprimirdata
+		%\vspace*{1cm}
+	\end{center}
+\end{capa}
 }
-\makeatother
-%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%
 %CUSTOMIZACAO DA FOLHA DE ROSTO
+
 \makeatletter
 
 \renewcommand{\folhaderostocontent}{
