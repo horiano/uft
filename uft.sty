@@ -1,0 +1,127 @@
+% ---
+% INICIO DAS CUSTOMIZACOES PARA UFT
+% ---
+
+\ProvidesPackage{uft}[2019 Pacote Para a UFT]
+\DeclareStringOption[Palmas]{campus}[Palmas]
+\DeclareStringOption[Curso de engenharia civil]{curso}[Curso de engenharia civil]
+%fim do processamento das opcoes
+\DeclareOption*{\PackageWarning{uft}{Op\c{c}\~{a}o Desconhecida -> ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+\newcommand{\Campus}{\expandafter\MakeUppercase\expandafter{\uft@campus}}
+\newcommand{\Curso}{\expandafter\MakeUppercase\expandafter{\uft@curso}}
+\newcommand{\NomeAutor}{\expandafter\MakeUppercase\expandafter{\imprimirautor}}
+% CUSTOMIZACA DA CAPA
+
+\renewcommand{\imprimircapa}{%
+	\begin{capa}%
+		\begin{center}
+			\includegraphics[width=2.83cm,height=3.1cm]{logouft}\\
+			%Universidade
+			\ABNTEXchapterfont UNIVERSIDADE FEDERAL DO TOCANTINS\\
+			C\^{A}MPUS UNIVERSIT\'{A}RIO DE \Campus \\
+			\Curso \\
+			\vspace*{2.5cm}
+			\ABNTEXchapterfont\textbf{\MakeUppercase{\NomeAutor}}
+		
+			\vspace*{5.0cm}
+			\ABNTEXchapterfont\textbf{\MakeUppercase{\imprimirtitulo}}
+			\vfill	
+			
+			\MakeUppercase{\imprimirlocal}	\\
+			\imprimirdata	
+			\vspace*{1cm}
+		\end{center}
+	\end{capa}
+}
+
+
+%CUSTOMIZACAO DA FOLHA DE ROSTO
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+\begin{center}
+			{\ABNTEXchapterfont\textbf{\MakeUppercase{\NomeAutor}}}\\
+			
+			\vspace*{5.5cm}
+			\ABNTEXchapterfont\textbf{\MakeUppercase{\imprimirtitulo}}\\
+			
+\end{center}
+
+	 \vspace*{4.5cm}
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.4\textwidth}
+  \begin{minipage}{.5\textwidth}
+  	\begin{SingleSpace}
+	  {\footnotesize \imprimirpreambulo}
+	\end{SingleSpace}
+  \end{minipage}%
+}%
+
+\vspace*{5mm}
+
+	\hspace{.4\textwidth}
+	\begin{minipage}{.5\textwidth}
+      \begin{SingleSpace}
+			\noindent
+		{\footnotesize\imprimirorientadorRotulo~\imprimirorientador\par}
+		\noindent
+		\abntex@ifnotempty{\imprimircoorientador}{%
+			{\footnotesize\imprimircoorientadorRotulo~\imprimircoorientador}%
+		}%
+      \end{SingleSpace}
+	\end{minipage}%
+
+    \vfill
+
+\noindent
+
+
+\begin{center}
+\MakeUppercase{\imprimirlocal}\\ \imprimirdata
+%\vspace*{1cm}
+\end{center}
+}
+
+\makeatother
+
+%Normaliza os tamanhos das fontes
+%\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+%\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+%tamanhos de fonte
+\renewcommand{\ABNTEXpartfont}{\normalfont\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXpartfontsize}{\normalsize}
+\renewcommand{\ABNTEXchapterfont}{\normalfont\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXpartfont}{\fontseries{b}\selectfont\selectfont}
+\renewcommand{\ABNTEXpartfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfont}{\normalfont\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont\selectfont}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\selectfont}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape\selectfont}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+%\renewcommand{\cftpartfont}{\bfseries}
+\renewcommand{\apendicesname}{AP\^ENDICES}
+
+%Espacamento de 1,5 apos capitulos e secoes
+\setlength\afterchapskip{\lineskip}
+%Insere um espaco entre numeracao e o titulo da secao
+%\setsecnumformat{\csname the#1\endcsname\space}
+
+%\renewcommand{\partapendices}{
+%	\phantomsection
+%	\part*{AP\^ENDICES}
+%	\addcontentsline{toc}{part}{AP\^ENCICES}
+%	\phantompart
+%	\printindex
+%}
+
+
+% ---
+% FIM DAS CUSTOMIZACOES
+% ---
