@@ -12,6 +12,8 @@
 \newcommand{\Campus}{\expandafter\MakeUppercase\expandafter{\uft@campus}}
 \newcommand{\Curso}{\expandafter\MakeUppercase\expandafter{\uft@curso}}
 \newcommand{\NomeAutor}{\expandafter\MakeUppercase\expandafter{\imprimirautor}}
+
+
 % CUSTOMIZACA DA CAPA
 
 \renewcommand{\imprimircapa}{%
@@ -36,6 +38,57 @@
 	\end{capa}
 }
 
+
+%CUSTOMIZACAO DA FOLHA DE ROSTO
+
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+\begin{center}
+			{\ABNTEXchapterfont\textbf{\MakeUppercase{\NomeAutor}}}\\
+			
+			\vspace*{5.5cm}
+			\ABNTEXchapterfont\textbf{\MakeUppercase{\imprimirtitulo}}\\
+			
+\end{center}
+
+	 \vspace*{4.5cm}
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.4\textwidth}
+  \begin{minipage}{.5\textwidth}
+  	\begin{SingleSpace}
+	  {\footnotesize \imprimirpreambulo}
+	\end{SingleSpace}
+  \end{minipage}%
+}%
+
+\vspace*{5mm}
+
+	\hspace{.4\textwidth}
+	\begin{minipage}{.5\textwidth}
+      \begin{SingleSpace}
+			\noindent
+		{\footnotesize\imprimirorientadorRotulo~\imprimirorientador\par}
+		\noindent
+		\abntex@ifnotempty{\imprimircoorientador}{%
+			{\footnotesize\imprimircoorientadorRotulo~\imprimircoorientador}%
+		}%
+      \end{SingleSpace}
+	\end{minipage}%
+
+    \vfill
+
+\noindent
+
+
+\begin{center}
+\MakeUppercase{\imprimirlocal}\\ \imprimirdata
+%\vspace*{1cm}
+\end{center}
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%
 
 %CUSTOMIZACAO DA FOLHA DE ROSTO
 \makeatletter
@@ -84,10 +137,11 @@
 %\vspace*{1cm}
 \end{center}
 }
-
 \makeatother
+%%%%%%%%%%%%%%%%%%%%
 
-%Normaliza os tamanhos das fontes
+%%% Normaliza os tamanhos das fontes %%%
+
 %\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 %\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 %tamanhos de fonte
