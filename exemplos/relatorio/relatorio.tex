@@ -1,0 +1,74 @@
+
+
+\documentclass[12pt,a4paper,oneside,openright,table,chapter=TITLE,english,brazil]{abntex2}
+
+\include{preambulo}
+
+
+\titulo{RELATÓRIO DE MEDIÇÃO URBANA}
+\local{Palmas (TO)}
+\data{2019}
+\orientador{}
+
+\instituicao{Universidade Federal}
+\tipotrabalho{Relatório}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Nome: Fulano da Silva \\
+		   Matrícula: 2020112233 \\
+		   Unidade concedente: UFT \\
+		   Data do início: 02/09/2019 \\
+		   Data do término: 29/09/2019 \\
+		   Prof. Orientador: Ciclano Mendes \\
+		   Curso/semestre: Engenharia Civil/2019-2}
+% ---
+
+\begin{document}
+  %Mudança padroes tabela
+  %alinhado a esquerda
+  \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+  %centralizado
+  \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+  %a direira
+  \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+  %	
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 	
+
+% Capa
+% ---
+\imprimircaparelatorio
+
+%%
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+\pagestyle{simple}
+
+% Capítulos do trabalho
+% ----------------------------------------------------------------------------------------------------- %
+
+  \include{caps/cap1}
+  \include{caps/cap2}
+
+%elementos pos textuais
+\postextual
+% ----------------------------------------------------------------------------------------------------- %
+\bibliography{../minhabase}
+
+%include{anexos/apendices}
+
+
+
+%\include{anexos/anexo1}
+
+
+\end{document}
