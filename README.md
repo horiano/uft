@@ -4,6 +4,21 @@ Este projeto é para criação de um pacote baseado no abntex2, segundo o [MANUA
 
 ## Requisitos
 
-É preciso usar a classe abntex2
+É preciso usar a classe abntex2.
 
+Exemplo simples:
+ 
 
+\documentclass[12pt,a4paper,brazil]{abntex2}
+
+%outros pacotes aqui
+
+\usepackage{uft}
+
+%outras opcções
+
+\begin{document}
+
+% Conteúdo
+
+\end{document}
