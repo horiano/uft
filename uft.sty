@@ -3,16 +3,26 @@
 % ---
 
 \ProvidesPackage{uft}[2019 Pacote Para a UFT]
-\DeclareStringOption[Palmas]{campus}[Palmas]
-\DeclareStringOption[Curso de engenharia civil]{curso}[Curso de engenharia civil]
+%\DeclareStringOption[Palmas]{campus}[Palmas]
+%\DeclareStringOption[Curso de engenharia civil]{curso}[Curso de engenharia civil]
 %fim do processamento das opcoes
 \DeclareOption*{\PackageWarning{uft}{Op\c{c}\~{a}o Desconhecida -> ‘\CurrentOption’}}
 \ProcessOptions\relax
 
-\newcommand{\Campus}{\expandafter\MakeUppercase\expandafter{\uft@campus}}
-\newcommand{\Curso}{\expandafter\MakeUppercase\expandafter{\uft@curso}}
-\newcommand{\NomeAutor}{\expandafter\MakeUppercase\expandafter{\imprimirautor}}
 
+%Comandos 
+\def\curso#1{\gdef\@curso{#1}}
+\def\@curso{\@latex@warning@no@line{No \noexpand\curso given}}
+
+\def\campus#1{\gdef\@campus{#1}}
+\def\@campus{\@latex@warning@no@line{No \noexpand\campus given}}
+
+%\newcommand{\curso}[1][Palmas]{#1}
+%\newcommand{\campus}[1][Engenharia]{#1}
+
+\newcommand{\Campus}{\expandafter\MakeUppercase\expandafter{\@campus}}
+\newcommand{\Curso}{\expandafter\MakeUppercase\expandafter{\@curso}}
+\newcommand{\NomeAutor}{\expandafter\MakeUppercase\expandafter{\imprimirautor}}
 
 % CUSTOMIZACA DA CAPA
 

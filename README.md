@@ -23,3 +23,12 @@ Exemplo simples:
 
 \end{document}
 ```
+
+## Comandos disponiveis
+
+Dois comandos estão disponíveis, para que as capas sejam alterados de acordo com o curso e o campus. Eles são:
+
+* \curso{Nome do curso}
+* \campus{Nome de campus}
+
+Eles devem ser usados antes do comando \begin{document}.
