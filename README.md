@@ -8,7 +8,7 @@ Este projeto é para criação de um pacote baseado no abntex2, segundo o [MANUA
 
 Exemplo simples:
  
-
+```
 \documentclass[12pt,a4paper,brazil]{abntex2}
 
 %outros pacotes aqui
@@ -22,3 +22,4 @@ Exemplo simples:
 % Conteúdo
 
 \end{document}
+```
