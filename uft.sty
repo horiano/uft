@@ -11,11 +11,11 @@
 
 
 %Comandos 
-\def\curso#1{\gdef\@curso{#1}}
-\def\@curso{\@latex@warning@no@line{No \noexpand\curso given}}
+\providecommand{\@curso}{}
+\newcommand{\curso}[1]{\renewcommand\@curso{#1}}
 
-\def\campus#1{\gdef\@campus{#1}}
-\def\@campus{\@latex@warning@no@line{No \noexpand\campus given}}
+\providecommand{\@campus}{}
+\newcommand{\campus}[1]{\renewcommand\@campus{#1}}
 
 %\newcommand{\curso}[1][Palmas]{#1}
 %\newcommand{\campus}[1][Engenharia]{#1}
