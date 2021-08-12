@@ -173,6 +173,16 @@
 \setlength\afterchapskip{\lineskip}
 %Insere um espaco entre numeracao e o titulo da secao
 \setsecnumformat{\csname the#1\endcsname\space}
+%redefine o comando \saythanks e \thanksmarkseries para usarem o mesmo simbolo
+\makeatletter 
+\renewcommand{\thanksmarkseries}[1]{%
+	\def\@bsmarkseries{\renewcommand{\thefootnote}%
+		{\@nameuse{#1}{footnote}}}
+	\renewcommand{\saythanks}{\begingroup
+		\renewcommand{\thefootnote}{\@nameuse{#1}{footnote}}\@bs@thanks
+		\endgroup\global\let\@bs@thanks\@empty}
+	}
+\makeatother
 %\titleformat{\subsection}{\normalfont\normalsize}{}{0pt}{\thesubsection\space}
 %\renewcommand{\partapendices}{
 %	\phantomsection
